@@ -1,0 +1,11 @@
+.pop-up{
+    position: fixed;
+    top: 25%;
+    left: 25%;
+    width: 50%;
+    height: 50%;
+    background-color: rgb(165, 165, 165);
+    z-index: 1000;
+    border: 1px solid black;
+    border-radius: 10%;
+}

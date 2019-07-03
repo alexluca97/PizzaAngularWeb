@@ -1,0 +1,29 @@
+<ul *ngFor="let product of products">
+  <div class="product">
+    <div class="title-and-photo">
+      <div class="title">
+        <h3>{{product.name}}</h3>
+      </div>
+      <div class="product-photo">
+        <img src="../../../assets/menuPizza1.jpg" />
+        <div class="ingredient">
+          <p>{{product.ingredients}}</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="pizza-description">
+      <p>{{product.description}}</p>
+    </div>
+    <div class="pizza-type">
+      <ul *ngFor="let type of product.type">
+        <span>
+          <button (click) = "addProduct(product,type)" class="size-button">{{type[0]}}</button>
+          <p>{{type[1]}}</p>
+        </span>
+      </ul>
+    </div>
+  </div>
+</ul>
+<app-purchase-notification [isBuyBtnPressed]="isNotificationVisible"></app-purchase-notification>

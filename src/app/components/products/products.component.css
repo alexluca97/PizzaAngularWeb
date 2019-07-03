@@ -1,0 +1,108 @@
+
+.product{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    box-sizing: border-box;
+    border: 5px black solid;
+    border-radius: 18% 0 38% 0%;
+}
+
+#menu-products{
+    margin: 0 15% 0 15%;
+}
+
+.product-photo{
+    position: relative;
+}
+
+.ingredient{
+    display: none;
+    position: absolute;
+    right: -150%;
+    top: 15%;
+    width: 150%;
+    height: 70%;
+    background-color: white;
+    border: 1px black solid;
+    border-radius: 25%;
+}
+
+.ingredient p {
+    text-align: center;
+}
+
+.product-photo:hover .ingredient{
+    display: block;
+}
+
+.product img{
+    width: 250px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+#exit-button{
+    position: absolute;
+    width: 5%;
+    left: 95%;
+    top: 0;
+}
+
+#headerMyPrc{
+    position: fixed;
+    width: 50%;
+}
+
+#middleMyPrc{
+    overflow: auto;
+    height: 80%;
+    position: relative;
+    top: 13%;
+}
+
+.size-button{
+    background-color: gray;
+    border: 1px solid white;
+    color: white;
+    padding: 10px 24px;
+    cursor: pointer;
+}
+
+.size-button:hover{
+    background-color: azure;
+    color: black;
+}
+
+#bottomMyPrc{
+    display: flex;
+    position: relative;
+    bottom: -15%;
+    justify-content: space-evenly;
+}
+
+#notificationPopUp{
+    display: none;
+    position: fixed;
+    bottom: 0%;
+    right: 0%;
+    height: 50px;
+
+    border-radius: 25px;
+    background-color: whitesmoke;
+    font-size: 10px;
+    z-index: 1000;
+}
+
+.pizza-type{
+    display: flex;
+}
+
+.pizza-type ul{
+    padding-inline-start: 0;
+    text-align: center;
+}
+
+.title{
+    text-align: center;
+}

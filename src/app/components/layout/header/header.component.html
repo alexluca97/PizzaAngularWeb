@@ -1,0 +1,12 @@
+<header class="header">
+  <h1>PizzaWeb</h1>
+  <div class="options">
+    <nav>
+      <a routerLink="/">Home</a> | <a routerLink="/menu">Menu</a> | <a routerLink="/contact">Contact</a>
+    </nav>
+    <div class="cart">
+      <img (click)="isCartVisible=!isCartVisible" src="../../../../assets/cos_icon.png">
+    </div>
+  </div>
+</header>
+<app-shopping-cart [isPopupVisible]="isCartVisible"></app-shopping-cart>

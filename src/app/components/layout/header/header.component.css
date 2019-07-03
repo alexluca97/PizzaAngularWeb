@@ -1,0 +1,28 @@
+.header{
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+
+.header a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.options{
+    display: flex;
+    justify-content: center;
+}
+nav{
+    width: 38vw;
+    text-align: end;
+}
+.cart{
+    width: 30vw;
+}
+.cart img{
+    width:30px;
+    height: 30px;
+    cursor: pointer;
+}

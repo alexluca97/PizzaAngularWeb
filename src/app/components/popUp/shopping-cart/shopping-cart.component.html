@@ -1,0 +1,9 @@
+<!--first div is the gray background to be unable to click other things-->
+<div *ngIf="isPopupVisible" class="first-div">
+  <!--second div is the popUp who must show up when click-->
+  <div class="pop-up">
+    <ul *ngFor="let product of productsCart">
+      <li>{{product.productName}} | {{product.productType}} | {{product.productPrice}}</li>
+    </ul>
+  </div>
+</div>
