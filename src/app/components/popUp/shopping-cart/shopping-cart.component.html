@@ -2,8 +2,40 @@
 <div *ngIf="isPopupVisible" class="first-div">
   <!--second div is the popUp who must show up when click-->
   <div class="pop-up">
-    <ul *ngFor="let product of productsCart">
-      <li>{{product.productName}} | {{product.productType}} | {{product.productPrice}}</li>
-    </ul>
+    <div style="display:flex; justify-content: space-between;">
+      <h1> Comanda ta</h1>
+      <button (click)="isPopupVisible=!isPopupVisible" style="height: 20px; position: relative; right: 50px; top:30px;">X</button>
+    </div>
+    <div style="height: 73%; overflow:auto;">
+      <table style="width:100%;" id="cart-table">
+        <tr>
+          <th></th>
+          <th>Pizza</th>
+          <th></th>
+          <th>Cantitate</th>
+          <th>Pret</th>
+          <th></th>
+        </tr>
+        <tr *ngFor="let product of productsCart; let i = index" [attr.data-index]="i">
+          <td>{{i+1}}</td>
+          <td>{{product.productName}}</td>
+          <td>{{product.productType}}</td>
+          <td>{{product.productQuantity}}</td>
+          <td>{{product.productPrice}}</td>
+          <td><button (click)="deleteProduct(product)" style="border-radius: 50%; cursor: pointer;">X</button></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>TOTAL:</td>
+          <td>{{totalPrice}} lei</td>
+        </tr>
+      </table>
+    </div>
+    <div style="display:flex; justify-content:center;">
+      <button (click)="isPopupVisible=!isPopupVisible">Continua cumparaturile!</button>
+      <button *ngIf="totalPrice>0">Comanda!</button>
+    </div>
   </div>
 </div>
