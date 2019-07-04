@@ -1,6 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { CartService } from '../../../services/cart.service';
-
 
 @Component({
   selector: 'app-shopping-cart',
@@ -11,6 +10,8 @@ import { CartService } from '../../../services/cart.service';
 
 export class ShoppingCartComponent implements OnInit {
   @Input() isPopupVisible: boolean;
+  @Output() isPopupClosed: EventEmitter<boolean> = new EventEmitter();
+
   productsCart: any;
   totalPrice: string;
 
@@ -18,9 +19,7 @@ export class ShoppingCartComponent implements OnInit {
   constructor(private cartService: CartService) { }
 
   ngOnInit() {
-    this.productsCart = this.productsCart = this.cartService.getProducts();
-
-    
+    this.productsCart = this.cartService.getProducts();
   }
 
   ngAfterContentChecked(){
@@ -30,4 +29,16 @@ export class ShoppingCartComponent implements OnInit {
   deleteProduct(product){
     this.cartService.deleteProduct(product);
   } 
+
+  onClose(isPopupVisible){
+    this.isPopupVisible = !isPopupVisible;
+    this.isPopupClosed.emit(isPopupVisible);
+  }
+
+  onCommand(){
+    this.productsCart = this.cartService.resetCart();
+    alert("Comanda dumneavoastra a fost inregistrata");
+    this.onClose(this.isPopupVisible);
+  }
+
 }

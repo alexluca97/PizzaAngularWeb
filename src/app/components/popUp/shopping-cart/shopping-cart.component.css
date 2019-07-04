@@ -9,3 +9,25 @@
     border: 1px solid black;
     border-radius: 10%;
 }
+
+.closeBtn{
+    height: 20px; 
+    position: relative; 
+    right: 50px; 
+    top:30px;
+}
+
+.deleteBtn{
+    border-radius: 50%; 
+    cursor: pointer;
+}
+
+#header{
+    display:flex; 
+    justify-content: space-between;
+}
+
+#cart-table{
+    height: 73%; 
+    overflow:auto;
+}

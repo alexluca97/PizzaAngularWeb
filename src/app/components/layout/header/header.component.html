@@ -9,4 +9,6 @@
     </div>
   </div>
 </header>
-<app-shopping-cart [isPopupVisible]="isCartVisible"></app-shopping-cart>
+<app-shopping-cart [isPopupVisible]="isCartVisible"
+  (isPopupClosed)="isCartVisible=!isCartVisible"
+  ></app-shopping-cart>

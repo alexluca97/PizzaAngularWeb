@@ -15,7 +15,7 @@ export class CartService {
     let x = this.cart.find(x => x.productName === productName && x.productType === productType);
     if(x){
       x.productQuantity += 1;
-      x.productPrice += productPrice;
+      x.productPrice = parseFloat((x.productPrice + productPrice).toFixed(2));
     }  
     else{
       this.cart.push({productName: productName, productType: productType, productQuantity: 1, productPrice:productPrice});
@@ -39,5 +39,9 @@ export class CartService {
        total+=element.productPrice;
      });
      return total.toFixed(2);
+   }
+
+   resetCart(){
+     this.cart = [];
    }
 }

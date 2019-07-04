@@ -2,12 +2,12 @@
 <div *ngIf="isPopupVisible" class="first-div">
   <!--second div is the popUp who must show up when click-->
   <div class="pop-up">
-    <div style="display:flex; justify-content: space-between;">
+    <div id="header">
       <h1> Comanda ta</h1>
-      <button (click)="isPopupVisible=!isPopupVisible" style="height: 20px; position: relative; right: 50px; top:30px;">X</button>
+      <button (click)="onClose(isPopupVisible)" class="closeBtn">X</button>
     </div>
-    <div style="height: 73%; overflow:auto;">
-      <table style="width:100%;" id="cart-table">
+    <div id="cart-table">
+      <table style="width:100%;">
         <tr>
           <th></th>
           <th>Pizza</th>
@@ -21,8 +21,8 @@
           <td>{{product.productName}}</td>
           <td>{{product.productType}}</td>
           <td>{{product.productQuantity}}</td>
-          <td>{{product.productPrice}}</td>
-          <td><button (click)="deleteProduct(product)" style="border-radius: 50%; cursor: pointer;">X</button></td>
+          <td>{{product.productPrice.toFixed(2)}}</td>
+          <td><button (click)="deleteProduct(product)" class="deleteBtn">X</button></td>
         </tr>
         <tr>
           <td></td>
@@ -34,8 +34,8 @@
       </table>
     </div>
     <div style="display:flex; justify-content:center;">
-      <button (click)="isPopupVisible=!isPopupVisible">Continua cumparaturile!</button>
-      <button *ngIf="totalPrice>0">Comanda!</button>
+      <button (click)="onClose(isPopupVisible)">Continua cumparaturile!</button>
+      <button (click)="onCommand()" *ngIf="totalPrice>0"> Comanda!</button>
     </div>
   </div>
 </div>
