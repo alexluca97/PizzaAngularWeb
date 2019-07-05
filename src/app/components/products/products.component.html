@@ -1,4 +1,4 @@
-<ul *ngFor="let product of products">
+<div *ngFor="let product of products">
   <div class="product">
     <div class="title-and-photo">
       <div class="title">
@@ -17,13 +17,13 @@
       <p>{{product.description}}</p>
     </div>
     <div class="pizza-type">
-      <ul *ngFor="let type of product.type">
+      <div *ngFor="let type of product.type">
         <span>
           <button (click) = "addProduct(product,type)" class="size-button">{{type[0]}}</button>
           <p>{{type[1]}}</p>
         </span>
-      </ul>
+      </div>
     </div>
   </div>
-</ul>
+</div>
 <app-purchase-notification [isBuyBtnPressed]="isNotificationVisible"></app-purchase-notification>

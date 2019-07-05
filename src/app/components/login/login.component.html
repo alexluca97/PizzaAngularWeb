@@ -1,0 +1,8 @@
+<div class="login">
+  <h1>LOGIN</h1>
+  <form (submit)="loginUser($event, user)">
+    <input type="text" placeholder="Username" [(ngModel)]='user.username'[ngModelOptions]="{standalone: true}"/>
+    <input type="password" placeholder="Password" [(ngModel)]='user.password'[ngModelOptions]="{standalone: true}"/>
+    <input type="submit" placeholder="Submit"/>
+  </form>
+</div>

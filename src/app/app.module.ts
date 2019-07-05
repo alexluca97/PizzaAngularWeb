@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,6 +12,7 @@ import { ProductsComponent } from './components/products/products.component';
 import { MenuComponent } from './components/pages/menu/menu.component';
 import { ShoppingCartComponent } from './components/popUp/shopping-cart/shopping-cart.component';
 import { PurchaseNotificationComponent } from './components/popUp/purchase-notification/purchase-notification.component';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -23,10 +25,12 @@ import { PurchaseNotificationComponent } from './components/popUp/purchase-notif
     MenuComponent,
     ShoppingCartComponent,
     PurchaseNotificationComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

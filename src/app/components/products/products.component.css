@@ -2,9 +2,10 @@
 .product{
     display: flex;
     justify-content: space-between;
-    width: 100%;
+    width: 50%;
     box-sizing: border-box;
-    border: 5px black solid;
+    border: 2px black solid;
+    margin: 2% 25%;
     border-radius: 18% 0 38% 0%;
 }
 
@@ -98,7 +99,7 @@
     display: flex;
 }
 
-.pizza-type ul{
+.pizza-type span{
     padding-inline-start: 0;
     text-align: center;
 }

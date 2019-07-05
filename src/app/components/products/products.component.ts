@@ -22,18 +22,15 @@ export class ProductsComponent implements OnInit {
 
   buyBtnPressed() {
     this.isNotificationVisible = true;
-    console.log(this.isNotificationVisible);
 
     setTimeout(() => {
       this.isNotificationVisible = false;
-      console.log(this.isNotificationVisible);
     }, 2000);
   }
 
   addProduct(product: any, type: any) {
     this.cartService.addProduct(product.name, type[0],type[2]);
     this.buyBtnPressed();
-    console.log(this.cartService.getProducts());
   }
 
 }

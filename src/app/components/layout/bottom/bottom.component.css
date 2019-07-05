@@ -1,8 +1,8 @@
 .bottom{
-    background: #333;
-    color: #fff;
+    background: rgb(43, 200, 228);
 }
 h1{
-    margin: 0;
+    line-height: 100px;
     text-align: center;
+    margin: 0;
 }

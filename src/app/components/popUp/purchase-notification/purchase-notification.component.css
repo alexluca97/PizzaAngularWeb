@@ -1,11 +1,16 @@
 #notificationPopUp{
     position: fixed;
-    bottom: 0%;
+    bottom: 2%;
     right: 0%;
-    height: 50px;
+    height: 100px;
+    width: 400px;
 
     border-radius: 25px;
     background-color: whitesmoke;
     font-size: 10px;
     z-index: 1000;
+}
+
+#notificationPopUp h1{
+    text-align: center;
 }

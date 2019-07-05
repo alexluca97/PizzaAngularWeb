@@ -1,4 +1,4 @@
-<div>
+<div *ngIf="auth.isAuth; else loggedOut">
   <div class="header">
     <app-header></app-header>
   </div>
@@ -11,3 +11,7 @@
     </div>
   </div>
 </div>
+
+<ng-template #loggedOut>
+  <app-login></app-login>
+</ng-template>

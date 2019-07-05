@@ -1,0 +1,12 @@
+.login {
+    width: 200px;
+    height: 300px;
+
+    margin: 200px auto;
+    text-align: center;
+}
+
+.login input{
+    padding: 10px;
+    margin: 5px 0%;
+}
