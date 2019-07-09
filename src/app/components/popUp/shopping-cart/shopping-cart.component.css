@@ -8,6 +8,7 @@
     z-index: 1000;
     border: 1px solid black;
     border-radius: 10%;
+    opacity: 0.90;
 }
 
 .closeBtn{
@@ -30,4 +31,22 @@
 #cart-table{
     height: 73%; 
     overflow:auto;
+}
+
+table td{
+        border: 1px solid #dddddd;
+        text-align: left;
+}
+
+table{
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+}
+
+.first-div{
+    background-color: rgba(255,255,255,0.5);
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
 }

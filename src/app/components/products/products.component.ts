@@ -29,6 +29,8 @@ export class ProductsComponent implements OnInit {
   }
 
   addProduct(product: any, type: any) {
+    console.log(product + ' ' + type);
+    console.log(this.dataService.getProducts());
     this.cartService.addProduct(product.name, type[0],type[2]);
     this.buyBtnPressed();
   }

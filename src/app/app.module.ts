@@ -13,6 +13,7 @@ import { MenuComponent } from './components/pages/menu/menu.component';
 import { ShoppingCartComponent } from './components/popUp/shopping-cart/shopping-cart.component';
 import { PurchaseNotificationComponent } from './components/popUp/purchase-notification/purchase-notification.component';
 import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { LoginComponent } from './components/login/login.component';
     ShoppingCartComponent,
     PurchaseNotificationComponent,
     LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

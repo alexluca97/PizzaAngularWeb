@@ -26,7 +26,8 @@
     height: 70%;
     background-color: white;
     border: 1px black solid;
-    border-radius: 25%;
+    /* border-radius: 25%; */
+    /* clip-path: polygon(28% 0, 100% 0%, 100% 75%, 77% 77%, 8% 99%, 50% 75%, 28% 75%); */
 }
 
 .ingredient p {

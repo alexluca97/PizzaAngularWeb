@@ -2,10 +2,11 @@
   <div class="options">
     <div><h1>PizzaWeb</h1></div>
     <nav>
-      <a routerLink="/home">Home</a> | <a routerLink="/menu">Menu</a> | <!--<a routerLink="/login">Login</a> |--> <a routerLink="/contact">Contact</a>
+      <p><a routerLink="/home">Home</a> | <a routerLink="/menu">Menu</a> | <!--<a routerLink="/login">Login</a> |--> <a routerLink="/contact">Contact</a><p>
     </nav>
-    <div class="cart">
-      <img (click)="isCartVisible=!isCartVisible" src="../../../../assets/cos_icon.png">
+    <div class="icons">
+      <img (click)="isCartVisible=!isCartVisible" src="../../../../assets/cos_icon.png" style="margin-right: 15%;"/>
+      <img (click)="onLogout()" src="../../../../assets/logout.svg"/>
     </div>
   </div>
 </header>

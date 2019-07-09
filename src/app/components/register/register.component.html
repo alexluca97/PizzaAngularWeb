@@ -1,0 +1,84 @@
+<div class="register">
+  <h1>Register</h1>
+  <form (ngSubmit)="CheckForm($event, this)" #myForm="ngForm">
+
+    <div>
+      <input type="text" required [(ngModel)]="user.fullName" minlength="4" appForbiddenName="admin" placeholder="Full name"
+        #name="ngModel" name="flName" pattern="^[A-Z][a-z]{2,}(\s[A-Z][a-z]{2,}){1,2}$" />
+      <div *ngIf="name.invalid && (name.dirty || name.touched)">
+        <div *ngIf="name.errors.required">
+          Name is required.
+        </div>
+        <div *ngIf="name.errors.minlength">
+          Name must be at least 4 characters long.
+        </div>
+        <div *ngIf="name.errors.forbiddenName">
+          Name cannot be admin.
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <input type="radio" [(ngModel)]="user.gender" name="genderO" value="other" checked />Other
+      <input type="radio" [(ngModel)]="user.gender" name="genderF" value="female" />Female
+      <input type="radio" [(ngModel)]="user.gender" name="genderM" value="male" />Male
+    </div>
+
+    <div>
+      <label for="bday"><br>Birthday:</label>
+      <input type="date" [(ngModel)]="user.dateOfBirth" name="birthday">
+    </div>
+
+    <div>
+      <label for="age">Age:</label>
+      <input type="number" [(ngModel)]="user.age" name="age" min="18" max="80" placeholder="18">
+    </div>
+
+    <div>
+      <label for="email">Email:</label>
+      <input type="email" [(ngModel)]="user.email" name="email" placeholder="example@smt">
+    </div>
+    <div>
+      <input type="text" required [(ngModel)]="user.username" appForbiddenName="admin" placeholder="Username" name="username"
+        #username="ngModel" name="usrName" />
+      <div *ngIf="username.invalid && (username.dirty || username.touched)">
+        <div *ngIf="username.errors.required">
+          Username is required.
+        </div>
+        <div *ngIf="username.errors.minlength">
+          Username must be at least 4 characters long.
+        </div>
+        <div *ngIf="username.errors.forbiddenName">
+          Username cannot be admin.
+        </div>
+      </div>
+    </div>
+    <div>
+      <!-- minimum 8 characters, minimum 1 Uppercase, minimum 1 lowercase, minimum 1 special character -->
+      <input type="password" required [(ngModel)]="user.password" minlength="8" placeholder="Password" name="pwd1"
+        #pwd1="ngModel" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" />
+      <div *ngIf="pwd1.invalid && (pwd1.dirty || pwd1.touched)">
+        <div *ngIf="pwd1.errors.required">
+          Password is required.
+        </div>
+        <div *ngIf="pwd1.errors.minlength">
+          Password must be at least 8 characters long.
+        </div>
+      </div>
+    </div>
+    <div>
+      <input type="password" required [(ngModel)]="passwordRetyped" placeholder="Retype Password" name="pwd2" #pwd2="ngModel" />
+      <div *ngIf="pwd2.invalid && (pwd2.dirty || pwd2.touched)">
+        <div *ngIf="pwd2.errors.required">
+          Retype Password is required.
+        </div>
+        <div *ngIf="pwd2.errors.minlength">
+          Retype Password must be at least 8 characters long.
+        </div>
+      </div>
+    </div>
+
+    <input type="button" value="Cancel" routerLink="/login">
+    <input type="submit" value="Register" [disabled]="!myForm.form.valid">
+  </form>
+</div>
