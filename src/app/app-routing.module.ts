@@ -6,6 +6,8 @@ import { MenuComponent } from './components/pages/menu/menu.component';
 import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
 import { AuthService } from './services/auth.service';
+import { LoginDevComponent } from './components/login-dev/login-dev.component';
+import { RegisterDevComponent } from './components/register-dev/register-dev.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -13,7 +15,9 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent, canActivate: [AuthService] },
   { path: 'contact', component: ContactComponent, canActivate: [AuthService] },
   { path: 'menu', component: MenuComponent, canActivate: [AuthService] },
-  { path: 'login', component: LoginComponent }
+  { path: 'login', component: LoginComponent },
+  { path: 'login-dev', component: LoginDevComponent},
+  { path: 'register-dev', component: RegisterDevComponent}
 ];
 
 @NgModule({

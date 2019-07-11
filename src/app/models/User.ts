@@ -2,9 +2,9 @@ export class User {
     fullName: string;
     username: string;
     password: string;
-    gender: boolean;
+    gender: string;
     age: number;
-    dateOfBirth: Date;
+    dateOfBirth: string;
     email: string;
     registerDate: Date;
     constructor() { }

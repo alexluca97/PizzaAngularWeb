@@ -14,6 +14,14 @@ import { ShoppingCartComponent } from './components/popUp/shopping-cart/shopping
 import { PurchaseNotificationComponent } from './components/popUp/purchase-notification/purchase-notification.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
+import {
+  DxTabsModule, DxDataGridModule, DxSelectBoxModule, DxTextBoxModule, DxValidationGroupModule, DxFormModule,
+  DxValidatorModule, DxValidationSummaryModule, DxButtonModule, DxListModule, DxTabPanelModule, DxPopupModule, DxPopoverModule,
+  DxLookupModule, DxScrollViewModule, DxTagBoxModule, DxLoadPanelModule, DxHtmlEditorModule, DxTreeListModule, DxChartModule, DxMapModule
+} from 'devextreme-angular';
+import { LoginDevComponent } from './components/login-dev/login-dev.component';
+import { RegisterDevComponent } from './components/register-dev/register-dev.component';
+import { ShoppingCartDevComponent } from './components/popUp/shopping-cart-dev/shopping-cart-dev.component';
 
 @NgModule({
   declarations: [
@@ -27,12 +35,36 @@ import { RegisterComponent } from './components/register/register.component';
     ShoppingCartComponent,
     PurchaseNotificationComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    LoginDevComponent,
+    RegisterDevComponent,
+    ShoppingCartDevComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    DxTabsModule,
+    DxDataGridModule,
+    DxSelectBoxModule,
+    DxTextBoxModule,
+    DxValidationGroupModule,
+    DxFormModule,
+    DxValidatorModule,
+    DxValidationSummaryModule,
+    DxButtonModule,
+    DxListModule,
+    DxTabPanelModule,
+    DxPopupModule,
+    DxPopoverModule,
+    DxLookupModule,
+    DxScrollViewModule,
+    DxTagBoxModule,
+    DxLoadPanelModule,
+    DxHtmlEditorModule,
+    DxTreeListModule,
+    DxChartModule,
+    DxMapModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -22,22 +22,23 @@ export class ShoppingCartComponent implements OnInit {
     this.productsCart = this.cartService.getProducts();
   }
 
-  ngAfterContentChecked(){
+
+  ngAfterContentChecked() {
     this.totalPrice = this.cartService.getTotalPrice();
   }
 
-  deleteProduct(product){
+  deleteProduct(product)  {
     this.cartService.deleteProduct(product);
-  } 
+  }
 
-  onClose(isPopupVisible){
+  onClose(isPopupVisible) {
     this.isPopupVisible = !isPopupVisible;
     this.isPopupClosed.emit(isPopupVisible);
   }
 
-  onCommand(){
+  onCommand() {
     this.productsCart = this.cartService.resetCart();
-    alert("Comanda dumneavoastra a fost inregistrata");
+    alert('Comanda dumneavoastra a fost inregistrata');
     this.onClose(this.isPopupVisible);
   }
 

@@ -1,0 +1,59 @@
+<div class="register">
+  <h1>Register</h1>
+  <form (submit)="onFormSubmit($event)">
+    <dx-form validationGroup="registerValidation" [formData]="user">
+      <dxi-item itemType="group" caption="Credentials">
+
+        <dxi-item editorType="dxTextBox" [editorOptions]="{placeholder: 'example@smt.com'}" [label]="{text: 'Email'}"
+          dataField="email">
+          <dxi-validation-rule type="required" message="Email is required"></dxi-validation-rule>
+        </dxi-item>
+
+        <dxi-item editorType="dxTextBox" [editorOptions]="{placeholder: 'Username'}" [label]="{text: 'Username'}"
+          dataField="username" placeholder="Username">
+          <dxi-validation-rule type="required" message="Username is required"></dxi-validation-rule>
+        </dxi-item>
+
+        <dxi-item editorType="dxTextBox" [editorOptions]="{ placeholder: 'Password', mode: 'password', onValueChanged: onPassChanged}" [label]="{text: 'Password'}"
+          dataField="password">
+          <dxi-validation-rule type="required" message="Password is required"></dxi-validation-rule>
+        </dxi-item>
+
+        <dxi-item editorType="dxTextBox" [editorOptions]="{placeholder: 'Confirm password', mode: 'password'}" [label]="{text: 'Confirm password'}">
+          <dxi-validation-rule type="required" message="Confirm password is required"></dxi-validation-rule>
+          <dxi-validation-rule type="compare" [comparisonTarget]='passwordComparison' message="Password and Confirm password do not match"></dxi-validation-rule>
+        </dxi-item>
+      </dxi-item>
+      <dxi-item itemType="group" caption="Personal Data">
+        <dxi-item editorType="dxTextBox" [editorOptions]="{placeholder: 'Peter Pann' }" [label]="{text: 'Full Name'}"
+          dataField="fullName">
+          <dxi-validation-rule type="required" message="Name is required">
+          </dxi-validation-rule>
+          <dxi-validation-rule type="pattern" [pattern]="namePattern" message="Do not use digits or symbols in the name">
+          </dxi-validation-rule>
+        </dxi-item>
+        <dxi-item editorType="dxDateBox" [editorOptions]="{invalidDateMessage: 'The date must have the following format: dd/MM/yyyy' }"
+          [label]="{text: 'Date of birth'}" dataField="dateOfBirth">
+          <dxi-validation-rule type="required" message="Date of birth is required">
+          </dxi-validation-rule>
+          <dxi-validation-rule type="range" [max]="maxDate" message="You must be at least 18 years old">
+          </dxi-validation-rule>
+        </dxi-item>
+        <dxi-item editorType="dxRadioGroup" [editorOptions]="{items: ['F','M']}" [label]="{text: 'Gender'}" dataField="gender">
+            <dxi-validation-rule type="required" message="Gender is required">
+              </dxi-validation-rule>
+        </dxi-item>
+        <dxi-item itemType="simple" dataField="Accepted" editorType="dxCheckBox" [editorOptions]="{text: 'I agree to the Terms and Conditions',value: false}"
+          [label]="{visible: false}">
+          <dxi-validation-rule type="compare" [comparisonTarget]='checkComparison' message="You must agree our terms and conditions">
+          </dxi-validation-rule>
+        </dxi-item>
+      </dxi-item>
+
+      <dxi-item itemType="group" [colCount]="2">
+        <dxi-item cssClass='cancelBtn' itemType="button" [buttonOptions]="cancelBtn"></dxi-item>
+        <dxi-item cssClass='registerBtn' itemType="button" [buttonOptions]="registerBtn"></dxi-item>
+      </dxi-item>
+    </dx-form>
+  </form>
+</div>
