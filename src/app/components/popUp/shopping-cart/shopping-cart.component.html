@@ -19,10 +19,10 @@
         </tr>
         <tr *ngFor="let product of productsCart; let i = index" [attr.data-index]="i">
           <td>{{i+1}}</td>
-          <td>{{product.productName}}</td>
-          <td>{{product.productType}}</td>
-          <td>{{product.productQuantity}}</td>
-          <td>{{product.productPrice.toFixed(2)}}</td>
+          <td>{{product.name}}</td>
+          <td>{{product.type}}</td>
+          <td>{{product.quantity}}</td>
+          <td>{{product.price.toFixed(2)}}</td>
           <td><button (click)="deleteProduct(product)" class="deleteBtn">X</button></td>
         </tr>
         <tr>

@@ -1,5 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { CartService } from 'src/app/services/cart.service';
+import { ProductCart } from 'src/app/models/Cart';
+
 
 @Component({
   selector: 'app-shopping-cart-dev',
@@ -11,31 +13,42 @@ export class ShoppingCartDevComponent implements OnInit {
   @Output() isPopupClosed: EventEmitter<boolean> = new EventEmitter();
 
   productsCart: any;
-   totalPrice: string;
+  totalPrice: string;
 
-  constructor(private cartService: CartService) { }
 
-  ngOnInit() {
-    this.productsCart = this.cartService.getProducts();
+  constructor(public cartService: CartService) {
+    this.productsCart = this.cartService.cart;
   }
 
-  // ngAfterContentChecked() {
-  //   this.totalPrice = this.cartService.getTotalPrice();
-  // }
+  calculatePrice = (e) => {
+    return e.quantity * e.price;
+  }
 
-  // deleteProduct(product)  {
-  //   this.cartService.deleteProduct(product);
-  // }
+  indexOfProduct = (e) => {
+    return this.productsCart.indexOf(e) + 1;
+  }
+  ngOnInit() { }
 
-  // onClose(isPopupVisible) {
-  //   this.isPopupVisible = !isPopupVisible;
-  //   this.isPopupClosed.emit(isPopupVisible);
-  // }
+  onContinue(isPopupVisible) {
+    this.isPopupVisible = !isPopupVisible;
+    this.isPopupClosed.emit(isPopupVisible);
+  }
 
-  // onCommand() {
-  //   this.productsCart = this.cartService.resetCart();
-  //   alert('Comanda dumneavoastra a fost inregistrata');
-  //   this.onClose(this.isPopupVisible);
-  // }
+  onOrder() {
+    this.productsCart = this.cartService.resetCart();
+    alert('Comanda dumneavoastra a fost inregistrata');
+    this.onContinue(this.isPopupVisible);
+  }
 
+  onToolbarPreparing(ev: any) {
+    ev.toolbarOptions.items.unshift({
+      location: 'before',
+      widget: 'dxButton',
+      options: {
+        icon: 'refresh',
+        onClick: ev.component.refresh(),
+        hint: 'Refresh'
+      }
+    });
+  }
 }

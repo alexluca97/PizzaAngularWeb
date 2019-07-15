@@ -12,7 +12,7 @@ export class ProductsComponent implements OnInit {
   products: any;
   isNotificationVisible: boolean;
 
-  constructor(private dataService: DataService, private cartService:CartService) { }
+  constructor(private dataService: DataService, private cartService: CartService) { }
 
   ngOnInit() {
     this.isNotificationVisible = false;
@@ -29,9 +29,7 @@ export class ProductsComponent implements OnInit {
   }
 
   addProduct(product: any, type: any) {
-    console.log(product + ' ' + type);
-    console.log(this.dataService.getProducts());
-    this.cartService.addProduct(product.name, type[0],type[2]);
+    this.cartService.addProduct(product.name, type[0], type[2]);
     this.buyBtnPressed();
   }
 

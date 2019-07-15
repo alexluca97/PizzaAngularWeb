@@ -11,14 +11,15 @@ export class CartService {
     this.cart = [];
   }
 
-  addProduct(productName: string, productType: string, productPrice: number) {
-    const x = this.cart.find(xp => xp.productName === productName && xp.productType === productType);
+  addProduct(name: string, type: string, price: number) {
+    const x = this.cart.find(xp => xp.name === name && xp.type === type);
     if (x) {
-      x.productQuantity += 1;
-      x.productPrice = parseFloat((x.productPrice + productPrice).toFixed(2));
+      x.quantity += 1;
+      x.price = parseFloat((x.price + price).toFixed(2));
     } else {
-      this.cart.push({ productName, productType, productQuantity: 1, productPrice });
+      this.cart.push({ name, type, quantity: 1, price });
     }
+    console.log(this.cart);
   }
 
   getProducts() {
@@ -35,12 +36,12 @@ export class CartService {
   getTotalPrice() {
     let total = 0;
     this.cart.forEach(element => {
-      total += element.productPrice;
+      total += element.price;
     });
     return total.toFixed(2);
   }
 
   resetCart() {
-    this.cart = [];
+    return this.cart = [];
   }
 }

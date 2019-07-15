@@ -1,6 +1,6 @@
-export class ProductCart{
-    productName: string;
-    productType: string;
-    productQuantity: number;
-    productPrice: number;
+export class ProductCart {
+    name: string;
+    type: string;
+    quantity: number;
+    price: number;
 }

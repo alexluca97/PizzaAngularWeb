@@ -13,8 +13,7 @@ export class AuthService {
   checkUserDetails(username: string, password: string) {
     // post these details to API server return user info if correct
     const usersDetails = this.userService.getUsers();
-    let foundUser = usersDetails.find(x => x.username === username && x.password === password);
-    console.log(usersDetails);
+    const foundUser = usersDetails.find(x => x.username === username && x.password === password);
 
     return new Promise((resolve, reject) => {
       if (foundUser) {
