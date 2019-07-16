@@ -1,0 +1,16 @@
+<dx-pie-chart
+    id="pie"
+    title="Pizza Dimension must buyed"
+    palette="bright"
+    [dataSource]="statisticsPizza">
+    <dxi-series
+        argumentField="type"
+        valueField="value">
+        <dxo-label [visible]="true">
+            <dxo-connector
+                [visible]="true"
+                [width]="1"></dxo-connector>
+        </dxo-label>
+    </dxi-series>
+    <dxo-size [width]="500"></dxo-size>
+</dx-pie-chart>

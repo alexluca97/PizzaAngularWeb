@@ -7,6 +7,7 @@ import { UserService } from './user.service';
 export class AuthService {
 
   isAuth: boolean;
+  userName: string;
 
   constructor(private userService: UserService) { }
 
@@ -17,9 +18,11 @@ export class AuthService {
 
     return new Promise((resolve, reject) => {
       if (foundUser) {
+        this.userName = username;
         resolve(true);
       } else {
         if (username === 'admin' && password === 'admin') {
+          this.userName = username;
           resolve(true);
         } else {
           resolve(false);

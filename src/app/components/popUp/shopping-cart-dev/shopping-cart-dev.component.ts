@@ -1,7 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { CartService } from 'src/app/services/cart.service';
-import { ProductCart } from 'src/app/models/Cart';
-
 
 @Component({
   selector: 'app-shopping-cart-dev',
@@ -35,6 +33,7 @@ export class ShoppingCartDevComponent implements OnInit {
   }
 
   onOrder() {
+    this.cartService.getStatistics();
     this.productsCart = this.cartService.resetCart();
     alert('Comanda dumneavoastra a fost inregistrata');
     this.onContinue(this.isPopupVisible);

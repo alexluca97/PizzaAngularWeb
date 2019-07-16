@@ -7,6 +7,7 @@
         <dxi-item editorType="dxTextBox" [editorOptions]="{placeholder: 'example@smt.com'}" [label]="{text: 'Email'}"
           dataField="email">
           <dxi-validation-rule type="required" message="Email is required"></dxi-validation-rule>
+          <dxi-validation-rule type="email" message="Correct email is required"></dxi-validation-rule>
         </dxi-item>
 
         <dxi-item editorType="dxTextBox" [editorOptions]="{placeholder: 'Username'}" [label]="{text: 'Username'}"

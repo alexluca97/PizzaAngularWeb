@@ -17,11 +17,13 @@ import { RegisterComponent } from './components/register/register.component';
 import {
   DxTabsModule, DxDataGridModule, DxSelectBoxModule, DxTextBoxModule, DxValidationGroupModule, DxFormModule,
   DxValidatorModule, DxValidationSummaryModule, DxButtonModule, DxListModule, DxTabPanelModule, DxPopupModule, DxPopoverModule,
-  DxLookupModule, DxScrollViewModule, DxTagBoxModule, DxLoadPanelModule, DxHtmlEditorModule, DxTreeListModule, DxChartModule, DxMapModule
+  DxLookupModule, DxScrollViewModule, DxTagBoxModule, DxLoadPanelModule, DxHtmlEditorModule, DxTreeListModule, DxChartModule, DxMapModule,
+  DxPieChartModule
 } from 'devextreme-angular';
 import { LoginDevComponent } from './components/login-dev/login-dev.component';
 import { RegisterDevComponent } from './components/register-dev/register-dev.component';
 import { ShoppingCartDevComponent } from './components/popUp/shopping-cart-dev/shopping-cart-dev.component';
+import { StatisticDevComponent } from './components/pages/statistic-dev/statistic-dev.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,8 @@ import { ShoppingCartDevComponent } from './components/popUp/shopping-cart-dev/s
     RegisterComponent,
     LoginDevComponent,
     RegisterDevComponent,
-    ShoppingCartDevComponent
+    ShoppingCartDevComponent,
+    StatisticDevComponent
   ],
   imports: [
     BrowserModule,
@@ -64,7 +67,8 @@ import { ShoppingCartDevComponent } from './components/popUp/shopping-cart-dev/s
     DxHtmlEditorModule,
     DxTreeListModule,
     DxChartModule,
-    DxMapModule
+    DxMapModule,
+    DxPieChartModule
   ],
   providers: [],
   bootstrap: [AppComponent]

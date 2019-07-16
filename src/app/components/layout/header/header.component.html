@@ -1,18 +1,20 @@
 <header class="header">
   <div class="options">
-    <div><h1>PizzaWeb</h1></div>
+    <div>
+      <h1>PizzaWeb</h1>
+    </div>
     <nav>
-      <p><a routerLink="/home">Home</a> | <a routerLink="/menu">Menu</a> | <!--<a routerLink="/login">Login</a> |--> <a routerLink="/contact">Contact</a><p>
+      <p><a routerLink="/home">Home</a> | <a routerLink="/menu">Menu</a> | <span *ngIf="auth.userName == 'admin'"><a
+            routerLink="/statistic-dev">Statistice</a> | </span> <a routerLink="/contact">Contact</a>
+        <p>
     </nav>
     <div class="icons">
-      <img (click)="isCartVisible=!isCartVisible" src="../../../../assets/cos_icon.png" style="margin-right: 15%;"/>
-      <img (click)="onLogout()"  src="../../../../assets/logout.svg"/>
+      <img (click)="isCartVisible=!isCartVisible" src="../../../../assets/cos_icon.png" style="margin-right: 15%;" />
+      <img (click)="onLogout()" src="../../../../assets/logout.svg" />
     </div>
   </div>
 </header>
 <!-- <app-shopping-cart [isPopupVisible]="isCartVisible"
   (isPopupClosed)="isCartVisible=!isCartVisible"
   ></app-shopping-cart> -->
-  <app-shopping-cart-dev [isPopupVisible]="isCartVisible"
-  (isPopupClosed)="isCartVisible=!isCartVisible"
-  ></app-shopping-cart-dev>
+<app-shopping-cart-dev [isPopupVisible]="isCartVisible" (isPopupClosed)="isCartVisible=!isCartVisible"></app-shopping-cart-dev>
